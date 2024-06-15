@@ -29,27 +29,31 @@ export const Game = ({ formData, setFormData }) => {
         return value;
       }
     });
-    const winner = CheckWinner(updatedBoard);
-    if (winner) {
-      if (winner === "O") {
-        setFormData({
-          player2: { name: player2.name, status: "WIN" },
-          player1: { name: player1.name, status: "LOSE" },
-        });
-        console.log("OWInnnnner");
-      } else if (winner === "X") {
-        setFormData({
-          player1: { name: player1.name, status: "WIN" },
-          player2: { name: player2.name, status: "LOSE" },
-        });
-        console.log("XWInnnnner");
-        
-      }
+    const isBoardFull = updatedBoard.every((value) => value !== null);
+    if (isBoardFull) {
       navigate("/ScoreAndSend");
-    }
+    } else {
+      const winner = CheckWinner(updatedBoard);
+      if (winner) {
+        if (winner === "O") {
+          setFormData({
+            player2: { name: player2.name, status: "WIN" },
+            player1: { name: player1.name, status: "LOSE" },
+          });
+          console.log("OWInnnnner");
+        } else if (winner === "X") {
+          setFormData({
+            player1: { name: player1.name, status: "WIN" },
+            player2: { name: player2.name, status: "LOSE" },
+          });
+          console.log("XWInnnnner");
+        }
+        navigate("/ScoreAndSend");
+      }
 
-    setBoard(updatedBoard);
-    setXPlaying(!xPlaying);
+      setBoard(updatedBoard);
+      setXPlaying(!xPlaying);
+    }
   };
   const CheckWinner = (board) => {
     for (let i = 0; i < Win_situation.length; i++) {
@@ -67,6 +71,10 @@ export const Game = ({ formData, setFormData }) => {
   };
   return (
     <div>
+      <div className="headerGame">
+        <h1>{player2.name} is : O</h1>
+        <h1>{player1.name} is : X</h1>
+      </div>
       <Board board={board} onClick={gameOver ? resetBoard : handleBoxClick} />;
     </div>
   );

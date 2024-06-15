@@ -40,7 +40,7 @@ function App() {
             element={<Score formData={formData} />}
           ></Route>
         </Routes>
-        <h1 className="textBottom">Proved By Your Name 2012</h1>
+  
       </Router>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Start.css";
 
 export const Start = ({ setFormData, formData }) => {
   const { player1, player2 } = formData;
@@ -29,25 +30,31 @@ export const Start = ({ setFormData, formData }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          value={formData.player1.name}
-          onChange={(event) => handleChange(event, "player1")}
-          placeholder="Enter Player one"
-          required
-        />
-        <input
-          type="text"
-          name="name"
-          value={formData.player2.name}
-          onChange={(event) => handleChange(event, "player2")}
-          placeholder="Enter Player two"
-          required
-        />
-        <button type="submit">START</button>
-      </form>
+      <div className="container">
+        <h1 className="titleForm">fill the Form</h1>
+        <form className="formStyle" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            value={formData.player1.name}
+            onChange={(event) => handleChange(event, "player1")}
+            placeholder="Enter Player one"
+            required
+          />
+          <input
+            type="text"
+            name="name"
+            value={formData.player2.name}
+            onChange={(event) => handleChange(event, "player2")}
+            placeholder="Enter Player two"
+            required
+          />
+          <button className="style_btn_start" type="submit">
+            START GAME
+          </button>
+        </form>
+      </div>
+      <h1 className="textBottom">Proved By Your Name 2012</h1>
     </div>
   );
 };

@@ -6,10 +6,10 @@ export const Score = ({ formData }) => {
   console.log(`${formData.player1.name}:${formData.player1.status}`);
   console.log(`${formData.player2.name}:${formData.player2.status}`);
   return (
-    <>
+    <div className="show">
       <SendDataAPI player={formData.player1}></SendDataAPI>
       <SendDataAPI player={formData.player2}></SendDataAPI>
       <GetData/>
-    </>
+    </div>
   );
 };

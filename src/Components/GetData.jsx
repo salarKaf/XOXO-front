@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import "./ShowData.css";
 const GetData = () => {
   console.log("getInData");
   const [players, setPlayers] = useState([]);
@@ -16,17 +16,19 @@ const GetData = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="titleScore">Loading...</div>;
   }
 
   return (
     <div>
-      <h1>Data Players:</h1>
-      <ul>
+      <h1 className="titleScore">SCORE TABLE(TOP 10)</h1>
+      <ul className="show">
         {players.map((player, index) => {
           return (
-            <li key={index}>
-              {player.name},{player.score}
+            <li className="rowData" key={index}>
+              <h1>{index + 1}</h1>
+              <h1>{player.name}</h1>
+              <h1>{player.score}</h1>
             </li>
           );
         })}

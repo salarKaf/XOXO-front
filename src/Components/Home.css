@@ -1,23 +1,17 @@
-#root {
-  margin: 0 auto;
-  padding: 0;
-  max-width: 1280px;
-}
-body {
-  background-color: #3b2a9f;
-  position: relative;
+.buttons {
+  width: 195px;
+  height: 358px;
+  margin-top: 36px;
   margin-left: auto;
   margin-right: auto;
 }
-.buttons {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 167px;
 }
-
-.buttons button {
+.btnHome {
   display: block;
   background-color: #fa8305;
   width: 500px;
@@ -26,7 +20,6 @@ body {
   border-radius: 30px;
   width: 195px;
   height: 36px;
-  /* font-family: Poppins; */
   padding-top: 2px;
   font-size: 20px;
   font-weight: 500;
@@ -34,11 +27,12 @@ body {
   text-align: center;
   color: white;
 }
-.title {
-  font-size: 36px;
+.textBottomHome {
+  font-style: normal;
   font-weight: 700;
-  line-height: 67.5px;
-  text-align: center;
-  color: #ffffff;
+  font-size: 20px;
+  line-height: 155.2%;
+  color: #fa8305;
   margin-top: 36px;
+  text-align: center;
 }

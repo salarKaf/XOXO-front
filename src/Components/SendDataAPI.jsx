@@ -30,8 +30,6 @@ const SendDataAPI = ({ player }) => {
 
     sendDataToAPI();
   }, [data]); // Adding data as a dependency to the useEffect hook
-
-  return <div>SEND TO API</div>;
 };
 
 export default SendDataAPI;
