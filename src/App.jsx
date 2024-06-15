@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./Style.css";
+
+import { Home } from "./Components/Home";
+import { Start } from "./Components/Start";
+import { Score } from "./Components/Score";
+import { Game } from "./Components/Game";
+import { useState } from "react";
+import GetData from "./Components/GetData";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [formData, setFormData] = useState({
+    player1: {
+      name: "",
+      status: "LOSE",
+    },
+    player2: {
+      name: "",
+      status: "LOSE",
+    },
+  });
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="Style">
+      <Router>
+        <h1 className="title">Tic-Tac-Toe</h1>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route
+            path="/start"
+            element={<Start formData={formData} setFormData={setFormData} />}
+          ></Route>
+          <Route
+            path="/game"
+            element={<Game formData={formData} setFormData={setFormData} />}
+          ></Route>
+          <Route path="/score" element={<GetData />}></Route>
+          <Route
+            path="/ScoreAndSend"
+            element={<Score formData={formData} />}
+          ></Route>
+        </Routes>
+        <h1 className="textBottom">Proved By Your Name 2012</h1>
+      </Router>
+    </div>
+  );
 }
 
-export default App
+export default App;

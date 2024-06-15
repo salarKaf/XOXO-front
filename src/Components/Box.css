@@ -1,0 +1,34 @@
+.box {
+  background-color: #1c140f;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgb(61, 62, 54);
+  width: 256px;
+  height: 256px;
+  font-size: 5em;
+  font-weight: bold;
+  line-height: 5rem;
+  margin: 0.5rem;
+  padding-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.blue-x {
+  /* font-family: Poppins; */
+  font-size: 128px;
+  font-weight: 700;
+  line-height: 240px;
+  color: #3b2a9f;
+}
+.red-o {
+  /* font-family: Poppins; */
+  font-size: 128px;
+  font-weight: 700;
+  line-height: 240px;
+  color: #cb1111;
+}
+.box:hover {
+  box-shadow: 0 0 30px #000000;
+}

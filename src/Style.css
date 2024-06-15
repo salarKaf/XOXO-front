@@ -1,20 +1,12 @@
-/* 
-*{
-  margin: 0;
-  padding: 0;
-}
 #root {
-  margin: 0  auto;
+  margin: 0 auto;
   padding: 0;
   max-width: 1280px;
-  padding: 2rem;
 }
 body {
   background-color: #3b2a9f;
 }
 .buttons {
-  /* margin-left: auto;
-  margin-right: auto; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,4 +48,5 @@ body {
   line-height: 67.5px;
   text-align: center;
   color: #ffffff;
-} */
+  margin-top: 36px;
+}
